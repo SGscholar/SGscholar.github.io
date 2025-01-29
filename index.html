@@ -16,7 +16,7 @@
         }
 
         header {
-            background-color: #bf7b06;
+            background-color: #002244;
             color: white;
             padding: 1rem;
             text-align: center;
@@ -25,7 +25,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #bf7b06;
+            background-color: #002244;
         }
 
         nav a {
@@ -36,7 +36,7 @@
         }
 
         nav a:hover {
-            background-color: #002244;
+            background-color: #f84433;
         }
 
         .container {
@@ -46,7 +46,8 @@
 
         .fade-in {
             opacity: 0;
-            transition: opacity 3s ease-in; /* Slower fade-in */
+            transition: opacity 3s ease-in;
+            /* Slower fade-in */
         }
 
         .visible {
@@ -54,7 +55,7 @@
         }
 
         footer {
-            background-color: #bf7b06;
+            background-color: #002244;
             color: white;
             text-align: center;
             padding: 1rem;
@@ -69,7 +70,7 @@
             text-align: left;
             font-size: 1.1rem;
             line-height: 1.6;
-            color: white;
+            color: black;
         }
 
         .accomplishments {
@@ -78,16 +79,26 @@
             text-align: left;
             font-size: 1.1rem;
             line-height: 1.6;
-            color: white;
+            color: black;
+        }
+
+        .left-img,
+        .right-img {
+            max-width: 100px;
+            /* Adjust size as needed */
+            height: auto;
         }
     </style>
 </head>
 
 <body>
     <header>
+        <img src="tsa_logo.jpg" alt="Left Image" class="left-img">
         <h1>TSA Club Events</h1>
         <p>Stay updated with our upcoming activities and competitions</p>
+        <img src="wsf_logo.jpg" alt="Right Image" class="right-img">
     </header>
+    <hr>
     <nav>
         <a href="index.html">Home</a>
         <a href="leadershipwsftsa.html">Leadership</a>
@@ -110,7 +121,8 @@
         <div id="accomplishments" class="accomplishments fade-in">
             <p>- **State Champions** in Robotics Design for 2023.</p>
             <p>- **National Finalists** in Web Design for 2022.</p>
-            <p>- Over 20 regional awards in categories like Video Game Design, Biotechnology, and Structural Engineering.</p>
+            <p>- Over 20 regional awards in categories like Video Game Design, Biotechnology, and Structural
+                Engineering.</p>
             <p>- Consistently ranked among the top 5 chapters in the state for innovation and leadership.</p>
         </div>
     </div>
