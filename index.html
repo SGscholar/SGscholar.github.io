@@ -44,11 +44,20 @@
 
         .fade-in {
             opacity: 0;
-            transition: opacity 1.5s ease-in;
+            transition: opacity 3s ease-in; /* Slower fade-in */
         }
 
         .visible {
             opacity: 1;
+        }
+
+        .fade-out {
+            opacity: 1;
+            transition: opacity 2s ease-out; /* Fade-out effect */
+        }
+
+        .hidden {
+            opacity: 0;
         }
 
         footer {
@@ -91,18 +100,7 @@
         <a href="#">Contact</a>
     </nav>
     <div class="container">
-        <h2>About TSA Club</h2>
-        <div class="description">
-            <p>The Technology Student Association (TSA) is a national organization of students engaged in science,
-                technology, engineering, and mathematics (STEM). Our school’s TSA chapter provides a platform for
-                students to explore these fields through hands-on activities, leadership development, and competitions
-                at the regional, state, and national levels.</p>
-            <p>As a TSA member, you’ll have the opportunity to design innovative projects, collaborate with peers, and
-                develop skills that will prepare you for a future in technology and engineering. Whether you're
-                interested in coding, robotics, or graphic design, there’s something for everyone in TSA.</p>
-        </div>
-
-        <h2>Our Accomplishments</h2>
+        <h2 id="heading" class="fade-out">Our Accomplishments</h2>
         <div id="accomplishments" class="accomplishments fade-in">
             <p>- **State Champions** in Robotics Design for 2023.</p>
             <p>- **National Finalists** in Web Design for 2022.</p>
@@ -115,12 +113,20 @@
     </footer>
 
     <script>
-        // JavaScript for fade-in effect
+        // JavaScript for fade-in and fade-out effects
         document.addEventListener("DOMContentLoaded", () => {
             const accomplishments = document.getElementById("accomplishments");
+            const heading = document.getElementById("heading");
+
+            // Trigger fade-in for accomplishments after a delay
             setTimeout(() => {
                 accomplishments.classList.add("visible");
-            }, 1000); // Delay the fade-in effect by 1 second
+            }, 1000); // Delay the fade-in by 1 second
+
+            // Trigger fade-out for the heading
+            setTimeout(() => {
+                heading.classList.add("hidden");
+            }, 2000); // Start fade-out after 2 seconds
         });
     </script>
 </body>
