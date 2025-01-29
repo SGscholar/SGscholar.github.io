@@ -11,8 +11,9 @@
             margin: 0;
             padding: 0;
             overflow-y: scroll;
-            background-color: black;
-            color: white;
+            background-color: white;
+            color: black;
+            /* Ensuring text remains black */
         }
 
         header {
@@ -45,8 +46,7 @@
 
         .fade-in {
             opacity: 0;
-            transition: opacity 3s ease-in;
-            /* Slower fade-in */
+            transition: opacity 2s ease-in;
         }
 
         .visible {
@@ -70,6 +70,7 @@
             font-size: 1.1rem;
             line-height: 1.6;
             color: black;
+            /* Ensuring text remains black */
         }
 
         .accomplishments {
@@ -79,12 +80,12 @@
             font-size: 1.1rem;
             line-height: 1.6;
             color: black;
+            /* Ensuring text remains black */
         }
 
         .left-img,
         .right-img {
             max-width: 100px;
-            /* Adjust size as needed */
             height: auto;
         }
     </style>
@@ -107,7 +108,7 @@
     </nav>
     <div class="container">
         <h2>About TSA Club</h2>
-        <div class="description">
+        <div id="tsa-description" class="description">
             <p>The Technology Student Association (TSA) is a national organization of students engaged in science,
                 technology, engineering, and mathematics (STEM). Our school’s TSA chapter provides a platform for
                 students to explore these fields through hands-on activities, leadership development, and competitions
@@ -116,14 +117,20 @@
                 develop skills that will prepare you for a future in technology and engineering. Whether you're
                 interested in coding, robotics, or graphic design, there’s something for everyone in TSA.</p>
         </div>
+        <hr>
 
-        <h2 id="heading" class="fade-in">Our Accomplishments</h2>
-        <div id="accomplishments" class="accomplishments fade-in">
-            <p>- **State Champions** in Robotics Design for 2023.</p>
-            <p>- **National Finalists** in Web Design for 2022.</p>
-            <p>- Over 20 regional awards in categories like Video Game Design, Biotechnology, and Structural
-                Engineering.</p>
-            <p>- Consistently ranked among the top 5 chapters in the state for innovation and leadership.</p>
+        <h2 id="heading-tsa" class="fade-in">TSA Holds Outstanding Records</h2>
+        <div id="accomplishments-tsa" class="accomplishments fade-in">
+            <p>- Over 300,000 Middle and High School Members</p>
+            <p>- Over 20 events</p>
+            <p>- Both Mark Zuckerberg and Sal Khan were members of TSA</p>
+        </div>
+        <hr>
+        <h2 id="heading-westfield" class="fade-in">Westfield TSA</h2>
+        <div id="accomplishments-westfield" class="accomplishments fade-in">
+            <p>- Won 7 awards at last regionals</p>
+            <p>- Has over 20 members</p>
+            <p>- Goes to Regionals, Technosphere (States), and Nationals</p>
         </div>
     </div>
     <footer>
@@ -131,16 +138,24 @@
     </footer>
 
     <script>
-        // JavaScript for fade-in effect
         document.addEventListener("DOMContentLoaded", () => {
-            const elementsToFadeIn = document.querySelectorAll(".fade-in");
+            // Selecting the elements
+            const tsaHeading = document.getElementById("heading-tsa");
+            const tsaAccomplishments = document.getElementById("accomplishments-tsa");
+            const westfieldHeading = document.getElementById("heading-westfield");
+            const westfieldAccomplishments = document.getElementById("accomplishments-westfield");
 
-            // Delay the fade-in effect for all elements
+            // Show TSA accomplishments first
             setTimeout(() => {
-                elementsToFadeIn.forEach((element) => {
-                    element.classList.add("visible");
-                });
-            }, 1000); // Delay the fade-in by 1 second
+                tsaHeading.classList.add("visible");
+                tsaAccomplishments.classList.add("visible");
+            }, 1000); // TSA section fades in after 0.5 seconds
+
+            // Show Westfield TSA section 1 second after TSA section is fully visible
+            setTimeout(() => {
+                westfieldHeading.classList.add("visible");
+                westfieldAccomplishments.classList.add("visible");
+            }, 2500); // Westfield TSA section fades in 2 seconds after TSA section
         });
     </script>
 </body>
