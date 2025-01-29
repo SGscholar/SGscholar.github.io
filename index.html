@@ -42,6 +42,15 @@
             text-align: center;
         }
 
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1.5s ease-in;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
         footer {
             background-color: #bf7b06;
             color: white;
@@ -50,6 +59,22 @@
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+
+        .description {
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .accomplishments {
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -66,17 +91,38 @@
         <a href="#">Contact</a>
     </nav>
     <div class="container">
-        <h2>Upcoming Events</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae massa sit amet nisl tincidunt
-            consectetur.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean luctus nunc in metus posuere, id elementum
-            nisl blandit.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque accumsan urna vel metus placerat
-            fermentum.</p>
+        <h2>About TSA Club</h2>
+        <div class="description">
+            <p>The Technology Student Association (TSA) is a national organization of students engaged in science,
+                technology, engineering, and mathematics (STEM). Our school’s TSA chapter provides a platform for
+                students to explore these fields through hands-on activities, leadership development, and competitions
+                at the regional, state, and national levels.</p>
+            <p>As a TSA member, you’ll have the opportunity to design innovative projects, collaborate with peers, and
+                develop skills that will prepare you for a future in technology and engineering. Whether you're
+                interested in coding, robotics, or graphic design, there’s something for everyone in TSA.</p>
+        </div>
+
+        <h2>Our Accomplishments</h2>
+        <div id="accomplishments" class="accomplishments fade-in">
+            <p>- **State Champions** in Robotics Design for 2023.</p>
+            <p>- **National Finalists** in Web Design for 2022.</p>
+            <p>- Over 20 regional awards in categories like Video Game Design, Biotechnology, and Structural Engineering.</p>
+            <p>- Consistently ranked among the top 5 chapters in the state for innovation and leadership.</p>
+        </div>
     </div>
     <footer>
         <p>&copy; 2025 TSA Club. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript for fade-in effect
+        document.addEventListener("DOMContentLoaded", () => {
+            const accomplishments = document.getElementById("accomplishments");
+            setTimeout(() => {
+                accomplishments.classList.add("visible");
+            }, 1000); // Delay the fade-in effect by 1 second
+        });
+    </script>
 </body>
 
 </html>
