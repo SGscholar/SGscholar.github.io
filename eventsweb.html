@@ -1,1 +1,214 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSA Club Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll;
+            background-color: white;
+            color: black;
+            /* Ensuring text remains black */
+        }
+
+        header {
+            background-color: #002244;
+            color: white;
+            padding: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #f84433;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #002244;
+        }
+
+        .left-text {
+            padding: 2rem;
+            text-align: left;
+        }
+
+        .left-description {
+            max-width: 800px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: left;
+            color: black;
+            /* Ensuring text remains black */
+
+        }
+
+        .right-text {
+            padding: 2rem;
+            text-align: right;
+        }
+
+        .right-description {
+            padding-left: 600px;
+            max-width: 1500px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: right;
+            text-justify: distribute-all-lines;
+            color: black;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 2s ease-in;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #002244;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .description {
+            margin: 2rem auto;
+            max-width: 800px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: black;
+            /* Ensuring text remains black */
+        }
+
+        .accomplishments {
+            margin: 2rem auto;
+            max-width: 800px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: black;
+            /* Ensuring text remains black */
+        }
+
+        .left-img,
+        .right-img {
+            max-width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img align="left" src="tsa_logo.jpg" alt="Left Image" class="left-img"><img align="right" src="wsf_logo.jpg"
+            alt="Right Image" class="right-img">
+        <center>
+            <h1>TSA Club Events</h1>
+            <p>Stay updated with our upcoming activities and competitions</p>
+        </center>
+
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="leadershipwsftsa.html">Leadership</a>
+        <a href="#">Events</a>
+        <a href="#">Contact</a>
+    </nav>
+    <img align="right" src=regionals.jpg alt="Regionals Picture">
+    <div class="left-text">
+        <h2>TSA Regionals</h2>
+        <div id="tsa-description">
+            <p class="left-description">TSA Regionals is the smallest event Westfield participates in. It includes
+                schools in the
+                Northern
+                Virginia Area, and offers a variety of events.
+                Students can be introduced to TSA competitions in a fun and engaging way
+            </p>
+        </div>
+    </div>
+
+    <div class="right-text">
+        <hr id="first-break" class="fade-in">
+        <img id="regionals" align="left" src=technosphere.jpg alt="Technosphere Picture" class="fade-in">
+
+        <h2 id="heading-tsa" class="fade-in">TSA Technosphere</h2>
+        <div id="accomplishments-tsa" class="fade-in">
+            <p class="right-description">The Virginia TSA Technosphere is the state's annual conference where students
+                from across Virginia compete in various STEM-related events, showcase their skills, and engage in
+                leadership development activities.
+                This high-energy event brings together future engineers, designers, and innovators
+                to participate in hands-on challenges, from robotics and coding to public speaking and project
+                presentations.
+                Technosphere provides students with opportunities to network, collaborate, and apply their knowledge
+            </p>
+        </div>
+    </div>
+
+    <div class="left-text">
+        <hr id="second-break" class="fade-in">
+        <img id="nationals" align="right" src=nationals.jpg alt="Nationals Picture" class="fade-in">
+        <h2 id="heading-westfield" class="fade-in">TSA Nationals</h2>
+        <div id="accomplishments-westfield" class="fade-in">
+            <p class="left-description">TSA Nationals is the largest conference TSA had to offer. You meet with members
+                from almost
+                every state,
+                and get to
+                test yourself at the highest level. This occurs during the summer, and is one of the most fun
+                competitions of
+                any club.
+            </p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 TSA Club. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Selecting the elements
+            const firstBreak = document.getElementById("first-break");
+            const techPic = document.getElementById("regionals");
+            const tsaHeading = document.getElementById("heading-tsa");
+            const tsaAccomplishments = document.getElementById("accomplishments-tsa");
+            const secondBreak = document.getElementById("second-break");
+            const natPic = document.getElementById("nationals");
+            const westfieldHeading = document.getElementById("heading-westfield");
+            const westfieldAccomplishments = document.getElementById("accomplishments-westfield");
+
+            // Show TSA accomplishments first
+            setTimeout(() => {
+                firstBreak.classList.add("visible");
+                tsaHeading.classList.add("visible");
+                tsaAccomplishments.classList.add("visible");
+                regionals.classList.add("visible");
+            }, 1000); // TSA section fades in after 0.5 seconds
+
+            // Show Westfield TSA section 1 second after TSA section is fully visible
+            setTimeout(() => {
+                westfieldHeading.classList.add("visible");
+                westfieldAccomplishments.classList.add("visible");
+                secondBreak.classList.add("visible");
+                natPic.classList.add("visible");
+            }, 2500); // Westfield TSA section fades in 2 seconds after TSA section
+        });
+    </script>
+</body>
+
+</html>
