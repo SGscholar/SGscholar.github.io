@@ -1,0 +1,42 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { format } from "date-fns";
+
+const events = [
+  { date: "2025-02-15", name: "Event A" },
+  { date: "2025-02-15", name: "Event B" },
+  { date: "2025-02-20", name: "Event C" },
+  { date: "2025-03-05", name: "Event D" },
+  { date: "2025-03-10", name: "Event E" },
+  { date: "2025-04-01", name: "Event F" },
+  { date: "2025-04-15", name: "Event G" },
+];
+
+const groupedEvents = events.reduce((acc, event) => {
+  const formattedDate = format(new Date(event.date), "MMMM d, yyyy");
+  acc[formattedDate] = acc[formattedDate] || [];
+  acc[formattedDate].push(event.name);
+  return acc;
+}, {});
+
+export default function EventCalendar() {
+  return (
+    <div className="p-6 max-w-3xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4">Upcoming Deadlines</h1>
+      <div className="space-y-4">
+        {Object.entries(groupedEvents).map(([date, eventNames]) => (
+          <Card key={date} className="p-4 border rounded-lg shadow-sm">
+            <h2 className="text-lg font-semibold">{date}</h2>
+            <CardContent>
+              <ul className="list-disc list-inside">
+                {eventNames.map((name, index) => (
+                  <li key={index}>{name}</li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+}
